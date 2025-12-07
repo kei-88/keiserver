@@ -18,7 +18,6 @@ cat << "EOF"
 EOF
 echo -e "${NC}"
 echo -e "${GREEN}Kei - Deployment Platform${NC}"
-echo -e "${YELLOW}Modified version of Dokploy${NC}"
 echo ""
 
 # Check if running as root
