@@ -83,16 +83,16 @@ export const WelcomeSuscription = () => {
 					)}
 				</div>
 
-				<DialogHeader>
-					<DialogTitle className="text-2xl text-center">
-						Welcome To Dokploy Cloud 🎉
-					</DialogTitle>
-					<DialogDescription className="text-center max-w-xl mx-auto">
-						Thank you for choosing Dokploy Cloud! 🚀 We're excited to have you
-						onboard. Before you dive in, you'll need to configure your remote
-						server to unlock all the features we offer.
-					</DialogDescription>
-				</DialogHeader>
+			<DialogHeader>
+				<DialogTitle className="text-2xl text-center">
+					Welcome To Kei Cloud 🎉
+				</DialogTitle>
+				<DialogDescription className="text-center max-w-xl mx-auto">
+					Thank you for choosing Kei Cloud! 🚀 We're excited to have you
+					onboard. Before you dive in, you'll need to configure your remote
+					server to unlock all the features we offer.
+				</DialogDescription>
+			</DialogHeader>
 				<div className="grid gap-4">
 					<div className="flex justify-between">
 						<h2 className="text-lg font-semibold">Steps</h2>

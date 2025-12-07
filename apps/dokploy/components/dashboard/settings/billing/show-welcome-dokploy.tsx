@@ -42,15 +42,15 @@ export const ShowWelcomeDokploy = () => {
 		<>
 			<Dialog open={open} onOpenChange={handleClose}>
 				<DialogContent className="sm:max-w-xl">
-					<DialogHeader>
-						<DialogTitle className="text-2xl font-semibold text-center">
-							Welcome to Dokploy Cloud 🎉
-						</DialogTitle>
-						<p className="text-center text-sm text-muted-foreground mt-2">
-							Unlock powerful features to streamline your deployments and manage
-							projects effortlessly.
-						</p>
-					</DialogHeader>
+				<DialogHeader>
+					<DialogTitle className="text-2xl font-semibold text-center">
+						Welcome to Kei Cloud 🎉
+					</DialogTitle>
+					<p className="text-center text-sm text-muted-foreground mt-2">
+						Unlock powerful features to streamline your deployments and manage
+						projects effortlessly.
+					</p>
+				</DialogHeader>
 					<div className="mt-4 space-y-3 text-sm text-primary ">
 						<ShowBilling />
 					</div>

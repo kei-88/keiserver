@@ -114,7 +114,6 @@ type NavItem =
 				isCloud: boolean;
 			}) => boolean;
 	  };
-
 // ExternalLink type
 // Represents an external link item (used for the help section)
 type ExternalLink = {
@@ -129,7 +128,6 @@ type ExternalLink = {
 type Menu = {
 	home: NavItem[];
 	settings: NavItem[];
-	help: ExternalLink[];
 };
 
 // Menu items
@@ -364,31 +362,7 @@ const MENU: Menu = {
 		},
 	],
 
-	help: [
-		{
-			name: "Documentation",
-			url: "https://docs.dokploy.com/docs/core",
-			icon: BookIcon,
-		},
-		{
-			name: "Support",
-			url: "https://discord.gg/2tBnJ3jDJc",
-			icon: CircleHelp,
-		},
-		{
-			name: "Sponsor",
-			url: "https://opencollective.com/dokploy",
-			icon: ({ className }) => (
-				<HeartIcon
-					className={cn(
-						"text-red-500 fill-red-600 animate-heartbeat",
-						className,
-					)}
-				/>
-			),
-		},
-	],
-} as const;
+};
 
 /**
  * Creates a menu based on the current user's role and permissions
@@ -421,14 +395,6 @@ function createMenuForAuthUser(opts: {
 		),
 		// Filter the help items based on the user's role and permissions
 		// Calls the `isEnabled` function if it exists to determine if the item should be displayed
-		help: MENU.help.filter((item) =>
-			!item.isEnabled
-				? true
-				: item.isEnabled({
-						auth: opts.auth,
-						isCloud: opts.isCloud,
-					}),
-		),
 	};
 }
 
@@ -841,7 +807,6 @@ export default function Page({ children }: Props) {
 	const {
 		home: filteredHome,
 		settings: filteredSettings,
-		help,
 	} = createMenuForAuthUser({ auth, isCloud: !!isCloud });
 
 	const activeItem = findActiveNavItem(
@@ -1055,28 +1020,6 @@ export default function Page({ children }: Props) {
 									</Collapsible>
 								);
 							})}
-						</SidebarMenu>
-					</SidebarGroup>
-					<SidebarGroup className="group-data-[collapsible=icon]:hidden">
-						<SidebarGroupLabel>Extra</SidebarGroupLabel>
-						<SidebarMenu>
-							{help.map((item: ExternalLink) => (
-								<SidebarMenuItem key={item.name}>
-									<SidebarMenuButton asChild>
-										<a
-											href={item.url}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="flex w-full items-center gap-2"
-										>
-											<span className="mr-2">
-												<item.icon className="h-4 w-4" />
-											</span>
-											<span>{item.name}</span>
-										</a>
-									</SidebarMenuButton>
-								</SidebarMenuItem>
-							))}
 						</SidebarMenu>
 					</SidebarGroup>
 				</SidebarContent>

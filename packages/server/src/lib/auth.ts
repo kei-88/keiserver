@@ -150,17 +150,15 @@ const { handler, api } = betterAuth({
 
 					if (IS_CLOUD || !isAdminPresent) {
 						await db.transaction(async (tx) => {
-							const organization = await tx
-								.insert(schema.organization)
-								.values({
-									name: "My Organization",
-									ownerId: user.id,
-									createdAt: new Date(),
-								})
-								.returning()
-								.then((res) => res[0]);
-
-							await tx.insert(schema.member).values({
+				const organization = await tx
+					.insert(schema.organization)
+					.values({
+						name: "Kei Organization",
+						ownerId: user.id,
+						createdAt: new Date(),
+					})
+					.returning()
+					.then((res) => res[0]);							await tx.insert(schema.member).values({
 								userId: user.id,
 								organizationId: organization?.id || "",
 								role: "owner",

@@ -117,7 +117,7 @@ const Register = ({ isCloud }: Props) => {
 				<div className="flex flex-col items-center gap-4 w-full">
 					<CardTitle className="text-2xl font-bold flex  items-center gap-2">
 						<Link
-							href="https://dokploy.com"
+							href="#"
 							target="_blank"
 							className="flex flex-row items-center gap-2"
 						>
@@ -167,17 +167,17 @@ const Register = ({ isCloud }: Props) => {
 											)}
 										/>
 										<FormField
-											control={form.control}
-											name="email"
-											render={({ field }) => (
-												<FormItem>
-													<FormLabel>Email</FormLabel>
-													<FormControl>
-														<Input placeholder="email@dokploy.com" {...field} />
-													</FormControl>
-													<FormMessage />
-												</FormItem>
-											)}
+										control={form.control}
+										name="email"
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel>Email</FormLabel>
+												<FormControl>
+													<Input placeholder="email@kei.com" {...field} />
+												</FormControl>
+												<FormMessage />
+											</FormItem>
+										)}
 										/>
 										<FormField
 											control={form.control}
@@ -220,7 +220,7 @@ const Register = ({ isCloud }: Props) => {
 											isLoading={form.formState.isSubmitting}
 											className="w-full"
 										>
-											Register
+											DAFTAR BANG
 										</Button>
 									</div>
 								</form>
